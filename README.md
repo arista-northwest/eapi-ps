@@ -28,7 +28,7 @@ Example
 
 ```powershell
 Import-Module -Force PsEapi.psm1
-New-EapiConnection -HostName yo631 |
+New-EapiConnection -HostName myswitch |
   Show-EapiHardwareCapacity |
   Select-Object -ExpandProperty tables |
   Where-Object {$_.usedPercent -gt 0}

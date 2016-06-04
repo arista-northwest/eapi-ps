@@ -20,12 +20,22 @@ Invoke-EapiCommands [-Commands] <string[]> -Connection <Object> [-Encoding <stri
 
 ### Show-EapiHardwareCapacity
 
+Helper cmdlet for Arad hardware capacity
+
 ```powershell
 Show-EapiHardwareCapacity [-Connection] <Object>  [<CommonParameters>]
 ```
 
 Example
 -------
+
+### Import the module
+
+```powershell
+PS> Import-Module -Force PsEapi.psm1
+```
+
+### Run any command...
 
 ```powershell
 PS > $conn = New-EapiConnection -HostName myswitch -UserName admin -Password ""
@@ -44,8 +54,10 @@ isIntlVersion    : False
 internalBuildId  : 667e1c30-0ed0-42e6-bd25-53adc03180e5
 hardwareRevision : 06.00
 ```
+
+### Output is an object. More complex post-processing works...
+
 ```powershell
-PS> Import-Module -Force PsEapi.psm1
 PS> New-EapiConnection -HostName myswitch -UserName admin -Password "" |
 >>   Show-EapiHardwareCapacity |
 >>   Select-Object -ExpandProperty tables |

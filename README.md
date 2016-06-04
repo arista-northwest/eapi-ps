@@ -27,11 +27,11 @@ Example
 -------
 
 ```powershell
-Import-Module -Force PsEapi.psm1
-New-EapiConnection -HostName myswitch |
-  Show-EapiHardwareCapacity |
-  Select-Object -ExpandProperty tables |
-  Where-Object {$_.usedPercent -gt 0}
+PS> Import-Module -Force PsEapi.psm1
+PS> New-EapiConnection -HostName myswitch -UserName admin -Password "" |
+>>   Show-EapiHardwareCapacity |
+>>   Select-Object -ExpandProperty tables |
+>>   Where-Object {$_.usedPercent -gt 0}
 highWatermark : 21
 used          : 21
 usedPercent   : 2

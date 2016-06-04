@@ -7,26 +7,26 @@ Usage
 
 ### New-EapiConnection
 
-```
+```powershell
 New-EapiConnection [-HostName] <string> [[-Protocol] <string>] [[-UserName] <string>] [[-Password] <string>] [<CommonParameters>]
 ```
 
 ### Invoke-EapiCommands
 
-```
+```powershell
 Invoke-EapiCommands [-Commands] <string[]> -Connection <Object> [-Encoding <string>] [<CommonParameters>]
 ```
 
 ### Show-EapiHardwareCapacity
 
-```
+```powershell
 Show-EapiHardwareCapacity [-Connection] <Object>  [<CommonParameters>]
 ```
 
 Example
 -------
 
-```ps
+```powershell
 Import-Module -Force PsEapi.psm1
 New-EapiConnection -HostName yo631 |
   Show-EapiHardwareCapacity |

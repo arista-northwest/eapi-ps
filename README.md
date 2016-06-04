@@ -1,9 +1,10 @@
 PsEapi
 ======
 
+Simple powershell module for Arista EAPI
+
 Usage
 -----
-
 
 ### New-EapiConnection
 
@@ -26,6 +27,23 @@ Show-EapiHardwareCapacity [-Connection] <Object>  [<CommonParameters>]
 Example
 -------
 
+```powershell
+PS > $conn = New-EapiConnection -HostName myswitch -UserName admin -Password ""
+PS > $conn | Invoke-EapiCommands "show version"
+
+modelName        : DCS-7508
+internalVersion  : 4.16.6M
+systemMacAddress : 00:1c:73:3c:ce:b2
+serialNumber     : NAN132700420
+memTotal         : 15681448
+bootupTimestamp  : 1464903383.51
+memFree          : 10935184
+version          : 4.16.6M
+architecture     : i386
+isIntlVersion    : False
+internalBuildId  : 667e1c30-0ed0-42e6-bd25-53adc03180e5
+hardwareRevision : 06.00
+```
 ```powershell
 PS> Import-Module -Force PsEapi.psm1
 PS> New-EapiConnection -HostName myswitch -UserName admin -Password "" |

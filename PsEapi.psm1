@@ -35,6 +35,7 @@ function Invoke-EapiCommands {
   # Create Object and convert to JSON
   $Params = @{version = 1; cmds = $Commands; format = $Encoding}
 
+  # Create the JSON object
   $Payload = (New-Object PSObject |
     Add-Member -PassThru NoteProperty jsonrpc '2.0' |
     Add-Member -PassThru NoteProperty method 'runCmds' |

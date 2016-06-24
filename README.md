@@ -55,7 +55,10 @@ internalBuildId  : 667e1c30-0ed0-42e6-bd25-53adc03180e5
 hardwareRevision : 06.00
 ```
 
-### Output is an object. More complex post-processing works...
+### Output is an Powershell object, so pipelining works...
+
+Here I'm using a wrapper for the "show hardware capacity" command and filter
+the results to only show tables that are greater than 0% full
 
 ```powershell
 PS> New-EapiConnection -HostName myswitch -UserName admin -Password "" |
